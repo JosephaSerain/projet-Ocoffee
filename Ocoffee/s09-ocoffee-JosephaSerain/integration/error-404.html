@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'Coffee 404 not found</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../public/css/reset.css" />
+    <link rel="stylesheet" href="../public/css/style.css" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="nav-bar">
+                <div class="logo">
+                    <img src="../public/images/logo.svg" alt="Logo de O'Coffee">
+                    <p class="O'Coffee">O'Coffee</p>
+                </div>
+
+                <div class="menu-burger">
+                    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul id="primary-menu" class="menu">
+                        <li><a href="../integration/accueil.html">Accueil</a></li>
+                        <li><a href="../integration/catalogue.html">Catalogue</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="illustration-404">
+                <img src="../public/images/image-404.png" alt="404 not found">
+                <a class="button" href="./accueil.html">Retour à l'accueil</a>
+            </div>
+
+            
+        </main>
+        <footer>
+            <p>O-Coffee SARL <br>
+                32 rue du Torréfacteur<br>
+                69006 LYON</p>
+        </footer>
+    </div>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', function () {
+            const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+            this.setAttribute('aria-expanded', !expanded);
+            menu.classList.toggle('is-active');
+        });
+    </script>
+</body>
+
+</html>

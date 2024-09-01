@@ -1,0 +1,641 @@
+/* Styles généraux*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f0e4cf;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/*Styles pour la nav bar et le menu burger */
+/*En format mobile, car le site a été conçu en mobile first*/
+
+.logo a {
+  width: 70px;
+  height: 70px;
+  margin: 5px 0 0 15px;
+  display: flex;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.nav-bar, .menu, .button {
+  background-color: #80502a;
+}
+
+.nav-bar, .menu {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-bar {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+}
+
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.menu {
+  position: fixed;
+  top: 80px;
+  right: -250px;
+  width: 250px;
+  height: calc(100% - 80px);
+  transition: 0.3s;
+  padding-top: 20px;
+}
+
+.menu li {
+  list-style-type: none;
+  padding-inline: 2rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  transition: 0.2s ease;
+}
+
+.menu.is-active {
+  right: 0;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul li {
+  padding: 10px 20px;
+}
+
+.menu ul li a {
+  list-style-type: none;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/*Styles page d'accueil*/
+
+.presentation {
+  padding-top: 100px;
+  text-align: center;
+}
+
+h1, .presentation p, .products-container h2, .product-card p {
+  color: #80502a;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  color: #80502a;
+}
+
+#about{
+  margin-right: 3%;
+  margin-top: 5%;
+  
+  width: 100%;
+}
+
+#about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+#latest {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 2.3rem;
+}
+
+.presentation p, 
+.product-card p {
+  padding-inline: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.6rem;
+  border-radius: 15px;
+  width: fit-content;
+}
+
+.button:hover {
+  background-color: #ba9267;
+  color: #80502a;
+  transition: 0.2s ease;
+}
+
+.presentation img {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+/* Styles pour les cartes produits (de l'accueil et du catalogue*/
+
+.products-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: fit-content;
+  padding-top: 2rem;
+}
+
+.product-card {
+  background-color: #ba9267b2;
+  width: 90%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 15px;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  transition: transform 0.2s ease;
+  
+}
+
+.product-card p {
+  color: #ffffff;
+  text-align: center;
+ 
+}
+
+
+.img-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  
+  
+  
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+}
+
+
+
+.product-card:hover {
+  transform: scale(1.1);
+}
+
+.feature {
+  text-align: center;
+  margin: auto;
+}
+
+
+
+
+/*Styles du catalogue*/
+
+.catalogue-title {
+  padding-top: 80px;
+  background-image: url(https://mag.guydemarle.com/app/uploads/2022/07/les-avantages-du-cafe-en-grains.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 400px;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catalogue-title h2 {
+  background-color: #f0e4cfcc;
+  padding:1rem;
+  border-radius: 15px;
+}
+
+.caracteristique{
+  width: 100%;
+  height: 5%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: end;
+  padding-right: 2%;
+}
+
+#categories {
+  border-radius: 5px;
+  background-color: #80502a;
+  color:#ffffff;
+
+}
+
+
+
+
+
+/*Styles de la page produit*/
+
+
+
+.product-illustration {
+  padding-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.product-illustration img {
+  width: 90%;
+  border-radius: 15px;
+  min-height: 200px;
+}
+
+.product-detail-card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.product-detail-card {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ba9267;
+  border-radius: 15px;
+  min-height: 300px;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  padding-inline: 1rem;
+  text-align: justify;
+  line-height: 2rem;
+}
+
+ strong {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #80502a;
+}
+
+.publication-date {
+  align-self: self-end;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product-detail-card .product-presentation {
+  padding-left: 1rem;
+}
+.product-detail-card .button {
+  align-self: center;
+  margin-block: 1.5rem;
+}
+
+/* Styles pour la page a propos*/
+
+#history {
+  margin-top: 10%;
+}
+
+#ambiance,
+#know-how {
+  background-color: #ba9267;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  margin-bottom: 7%;
+  margin-top: 7%;
+  
+}
+
+#ambiance p,
+#know-how p {
+  color: #ffffff;
+  padding-block: 2%;
+}
+
+.a-propos-img-container{
+  width: 65%;
+  height: 20%;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 7%;
+margin-right: 2%;
+padding-bottom: 3%;
+margin: auto;
+
+}
+
+.a-propos-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+  padding-block: 7%;
+
+}
+
+/*Styles de la page 404*/
+
+.illustration-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.illustration-404 img {
+  width: 90%;
+  padding-top: 50%;
+  margin-bottom: 2rem;
+}
+
+/*Styles du footer*/
+
+footer {
+  height: 70px;
+  width:100%;
+  background-color: #80502a;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 20px;
+}
+
+footer p {
+  padding-top: 10px;
+}
+
+@media (max-width: 350px) {
+
+  .img-container {
+    height: 150px;
+    min-width: 280px;
+  }
+
+  .product-illustration  {
+    width: 90%;
+    height: 150px;
+    margin: auto;
+    margin-bottom: 180px;
+  }
+
+  .product-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+  }
+}
+
+/* Media Query pour le desktop */
+@media (min-width: 768px) {
+
+  /*Styles pour le menu burger*/
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    padding-top: 0;
+    display: flex;
+  }
+
+  .menu ul {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu ul li {
+    padding: 0 15px;
+  }
+
+  .menu li {
+    list-style-type: none;
+    padding-inline: 2rem;
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .menu a:hover {
+    text-decoration: underline;
+    transition: 0.2s ease;
+  }
+
+  /* Styles pour la page d'accueil*/
+
+  .presentation {
+    padding-top: 100px;
+  }
+  .presentation {
+    display: flex;
+    flex-direction: row;
+    padding-top: 55px;
+  }
+
+  .presentation img {
+    height: 70vh;
+    width : 60%
+  }
+
+  .presentation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .presentation-content h1 {
+    font-size: 3rem;
+    margin-top: 100px;
+  }
+
+  /*Styles pour les cartes produits de l'accueil et du catalogue*/
+
+  .products-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product-card {
+    width: 27%;
+    margin: 1%;
+    height: 630px;
+    position:relative;
+    
+  }
+
+  
+
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .product-card .origin {
+    position: absolute;
+    bottom: 7rem;
+  }
+
+  
+
+  .product-card .button {
+    margin-bottom: 1rem;
+  }
+
+  .product-card a {
+    margin-bottom: 2%;
+  }
+
+  /*Styles de la page produit*/
+
+  .product-illustration {
+    height: 500px;
+    width: 80%;
+    margin: auto;
+  }
+
+  .product-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .product-detail-card .button {
+    margin-top: 4rem;
+  }
+
+  /* Styles de la page à propos*/
+  .a-propos-img-container{
+    width: 65%;
+    height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+  margin-right: 2%;
+  padding-bottom: 3%;
+  
+  }
+
+  .a-propos-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    padding-block: 7%;
+
+  }
+
+  #ambiance {
+    margin-inline: 2%;
+
+  }
+
+  .a-propos-container {
+    display: flex;
+  }
+
+  .know-how{
+    margin-inline: 2%;
+  }
+ 
+  /*Styles de la 404*/
+
+  .illustration-404 {
+    margin-bottom: 4rem;
+    position:absolute;
+    top : 10%;
+    left: 25%
+  }
+
+  .illustration-404 img {
+    padding-top: 0px;
+  }
+}
+
+/*Media Query pour les tablettes*/
+@media (max-width: 900px) {
+
+  .illustration-404 {
+    margin-bottom: 4rem;
+    position:absolute;
+    top : 10%;
+    left: 15%
+  }
+}
+
+
+

@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+<main>
+    <div class="presentation">
+        <div class="presentation-content">
+            <h1>O'Coffee</h1>
+            <h2>Qui sommes nous ?</h2>
+            <p>Jean et Jacques Pepper, deux frères passionnés par le café, sont les fondateurs de notre boutique. Avec
+                une expertise approfondie et un amour profond pour cette délicieuse boisson, ils ont créé un espace où
+                le café est célébré comme une expérience raffinée et inspirante.
+            </p>
+            <a class="button" href="/catalogue">Notre catalogue</a>
+        </div>
+
+        <div id="about">
+            <img src="/images/about.jpg" alt="image de tasses de café">
+        </div>
+        
+    </div>
+    <section>
+        <h2 id="latest">Nouveautés</h2>
+        <div class="products-container">
+            <% coffees.forEach(coffee => { %>
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="/images/coffees/<%= coffee.reference %>.png" alt="Image du café">
+                </div>
+                <h3><%= coffee.nom %></h3>
+                <p><%= coffee.description %></p>
+                <p class=" feature"><strong>Origine : </strong> <%= coffee.origine %></p>
+                <p class="coffee-category feature"><strong>Caractéristique principale : </strong><%= coffee.caracteristique_principale %></p>
+                <a class="button feature" href="/cafe/<%= coffee.id %>">Découvrir</a>
+            </div>
+            <% }) %>
+            
+        </div>
+    </section>
+</main>
+<%- include('partials/footer') %>

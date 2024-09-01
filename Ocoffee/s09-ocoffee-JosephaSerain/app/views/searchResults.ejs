@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+    <main>
+        <div class="catalogue-title">
+            <h2>Catalogue</h2>
+            
+        </div>
+        
+        <section class="products-diplay">
+            <div class="caracteristique">
+                <select name="categories" id="categories">
+                    <option value="">Caractéristique principale</option>
+                    <option value="corse">Corsé</option>
+                    <option value="fruite">Fruité</option>
+                    <option value="acide">Acide</option>
+                    <option value="doux">Doux</option>
+                    <option value="epice">Epicé</option>
+                    <option value="chocolote">Chocoloté</option>
+                </select>
+            </div>
+            
+            <div class="products-container">
+                <% coffees.forEach(coffee => { %>
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="/images/coffees/<%= coffee.reference %>.png" alt="">
+                    </div>
+                    <h3><%= coffee.nom %></h3>
+                    <p class="description"><%= coffee.description %></p>
+                    <p class="origin">Origine : <%= coffee.origine %></p>
+                    <p class="coffee-category">Caractéristique principale : <%= coffee.caracteristique_principale %></p>
+                    <a class="button" href="/cafe/<%= coffee.id %>">Découvrir</a>
+
+                </div>
+                <% }) %>
+        
+            </div>
+            
+        </section>
+
+
+        </div>
+
+    </main>
+    <%- include('partials/footer') %>

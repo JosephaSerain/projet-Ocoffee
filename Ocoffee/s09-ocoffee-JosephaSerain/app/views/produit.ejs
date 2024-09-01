@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+        <main>
+            <div class="product-illustration">
+                <img src="/images/coffees/<%= coffee.reference %>.png" alt="Image du café">
+            </div>
+            <div class="product-detail-card-container">
+                <div class="product-detail-card">
+                    <p class="publication-date">Publié le 30/07/2024</p>
+                    <h1><%= coffee.nom %></h1>
+                    <p class="product-presentation"><strong>Description :</strong> <%= coffee.description %></p>
+                    <p class="product-presentation"><strong>Origine :</strong>  <%= coffee.origine %></p>
+                    <p class="product-presentation"> <strong>Prix au kilo :</strong>  <%= coffee.prix_au_kilo %>€ /kg</p>
+                    <p class="product-presentation"> <strong>Disponibilité :</strong> 
+                        <% if (coffee.disponible) { %>
+                           Disponible
+                        <% } else { %>
+                           Indisponible
+                        <% } %>
+                      </p>
+                    
+                    <a class="button" href="/catalogue">Retour au catalogue</a>
+        
+                </div>
+
+            </div>
+        
+
+        </main>
+<%- include('partials/footer') %>

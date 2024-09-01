@@ -1,0 +1,19 @@
+    <footer>
+        <p>O-Coffee SARL <br>
+        32 rue du Torréfacteur<br>
+        69006 LYON</p>
+    </footer>
+</div>
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    menuToggle.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        menu.classList.toggle('is-active');
+    });
+</script>
+</body>
+
+</html>

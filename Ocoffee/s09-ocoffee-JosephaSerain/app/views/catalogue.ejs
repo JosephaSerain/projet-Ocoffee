@@ -1,0 +1,61 @@
+<%- include('partials/header') %>
+<main>
+    <div class="catalogue-title">
+        <h2>Catalogue</h2>
+    </div>
+    
+    <section class="products-display">
+        <div class="caracteristique">
+            <select name="categories" id="categories">
+                <option value="all">Toutes les caractéristiques</option>
+                <option value="Corsé">Corsé</option>
+                <option value="Fruité">Fruité</option>
+                <option value="Acide">Acide</option>
+                <option value="Doux">Doux</option>
+                <option value="Epicé">Epicé</option>
+                <option value="Chocolaté">Chocolaté</option>
+            </select>
+        </div>
+        
+        <div class="products-container">
+            <% coffees.forEach(coffee => { %>
+            <div class="product-card" data-category="<%= coffee.caracteristique_principale %>">
+                <div class="img-container">
+                    <img src="/images/coffees/<%= coffee.reference %>.png" alt="Image du café">
+                </div>
+                <h3><%= coffee.nom %></h3>
+                <p class="feature"><%= coffee.description %></p>
+                <p class="feature"><strong>Origine : </strong>  <%=  coffee.origine %></p>
+                <p class="coffee-category feature"><strong>Caractéristique principale : </strong> <%= coffee.caracteristique_principale %></p>
+                <a class="button feature" href="/cafe/<%= coffee.id %>">Découvrir</a>
+            </div>
+            <% }) %>
+        </div>
+    </section>
+</main>
+
+<!--Obligé de mettre le script dans la balise, si je le met dans un fichier à part il ne se charge pas-->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const selectElement = document.getElementById('categories');
+    const productCards = document.querySelectorAll('.product-card');
+
+    selectElement.addEventListener('change', function() {
+        const selectedCategory = this.value;
+        console.log('Selected category:', selectedCategory); 
+
+        productCards.forEach(card => {
+            const cardCategory = card.dataset.category;
+             
+
+            if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+
+<%- include('partials/footer') %>
